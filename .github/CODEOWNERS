@@ -1,0 +1,5 @@
+# Keep the security boundary and publish workflow under maintainer review.
+* @MostlyHarmlessxyz
+.github/ @MostlyHarmlessxyz
+src/ @MostlyHarmlessxyz
+SECURITY.md @MostlyHarmlessxyz

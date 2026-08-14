@@ -1,0 +1,21 @@
+# The bundle enables the safe provider and the model-facing fetch tool.
+# `web` and `tool-web` configs are repeated in full because DSH patch rows
+# replace config objects rather than deep-merging them.
+- insert:
+    - id: safe-web-fetch
+      name: dsh-safe-web-fetch
+
+# These rows intentionally restate the complete base configuration. DSH patch
+# config is replacement (not a deep merge), so omitting search would silently
+# disable the search provider in profiles that use the base bundle.
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: deepseek-official
+    fetchProvider: safe-http
+
+- id: tool-web
+  name: '@deepseek-ai/dsh-tool-web'
+  config:
+    fetch: true
+    searchTimeoutMs: 60000
