@@ -30,6 +30,11 @@ The npm package settings and the GitHub environment must use the same names.
 The workflow uses GitHub OIDC (`id-token: write`) and does not read
 `NPM_TOKEN`. Use an environment approval rule for the first stable release.
 
+The bootstrap command publishes the current canary directly; do not push a
+`v0.1.0-next.0` tag afterward, because the publish workflow would quite
+correctly refuse to publish the same version twice. The next versioned tag
+should be `v0.1.0-next.1` (or a later version) after updating the changelog.
+
 ## Subsequent releases
 
 1. Update `version` and `CHANGELOG.md`.
